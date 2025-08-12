@@ -1,0 +1,94 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#birthday-wish {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ff69b4;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+p {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timer-box {
+    background: #ff69b4;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.timer-box span {
+    display: block;
+    font-size: 2rem;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Add some confetti */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    animation: confetti-fall 10s infinite;
+    z-index: -1;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
